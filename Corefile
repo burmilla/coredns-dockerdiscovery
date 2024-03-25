@@ -1,0 +1,10 @@
+.:53 {
+    errors
+    docker unix:///var/run/docker.sock {
+        domain docker.loc
+        compose_domain compose.loc
+    }
+    forward . /etc/resolv.conf
+    cache 30
+    log
+}
