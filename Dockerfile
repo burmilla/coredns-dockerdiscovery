@@ -22,4 +22,5 @@ FROM alpine:${ALPINE_VERS}
 RUN apk --no-cache add ca-certificates
 COPY --from=0 /usr/local/bin/coredns /usr/local/bin/coredns
 COPY /Corefile /
-ENTRYPOINT ["/usr/local/bin/coredns"]
+COPY /entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
