@@ -48,7 +48,7 @@ func NewDockerDiscovery(dockerEndpoint string) *DockerDiscovery {
 	return &DockerDiscovery{
 		dockerEndpoint:   dockerEndpoint,
 		containerInfoMap: make(ContainerInfoMap),
-		ttl:              3600,
+		ttl:              300,
 	}
 }
 
