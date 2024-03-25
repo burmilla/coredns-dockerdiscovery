@@ -220,7 +220,7 @@ func (dd *DockerDiscovery) updateContainerInfo(container *dockerapi.Container) e
 		}
 
 		if !isExist {
-			log.Printf("[docker] Add entry of container %s (%s). IP: %v", normalizeContainerName(container), container.ID[:12], containerAddress)
+			log.Printf("[docker] Add entry for container with name: %s (hostname: %s), FQDN(s): %s. IP: %v", normalizeContainerName(container), container.ID[:12], domains, containerAddress)
 		}
 	} else if isExist {
 		log.Printf("[docker] Remove container entry %s (%s)", normalizeContainerName(container), container.ID[:12])
